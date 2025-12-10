@@ -1,0 +1,6 @@
+@HeimdallSpaceCrm.Api_HostAddress = http://localhost:5241
+
+GET {{HeimdallSpaceCrm.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\HeimdallSpaceCrm.Communication\HeimdallSpaceCrm.Communication.csproj" />
+      <ProjectReference Include="..\HeimdallSpaceCrm.Domain\HeimdallSpaceCrm.Domain.csproj" />
+      <ProjectReference Include="..\HeimdallSpaceCrm.Exception\HeimdallSpaceCrm.Exception.csproj" />
+    </ItemGroup>
+
+</Project>
