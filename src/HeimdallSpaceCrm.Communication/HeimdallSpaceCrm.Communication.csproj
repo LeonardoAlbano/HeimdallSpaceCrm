@@ -6,4 +6,10 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Auth\Login\Requests\" />
+      <Folder Include="Auth\Login\Responses\" />
+      <Folder Include="Auth\Register\" />
+    </ItemGroup>
+
 </Project>
