@@ -4,7 +4,7 @@ public class User
 {
     private User() { }
     
-    public Guid Id { get; private set; } = Guid.NewGuid();
+    public Guid Id { get; private set; }
     public string Name { get; private set; } = null!;
     public string Email { get; private set; } = null!;
     public string PasswordHash { get; private set; } = null!;
@@ -14,6 +14,7 @@ public class User
     {
         return new User
         {
+            Id = Guid.NewGuid(),
             Name = name,
             Email = email,
             PasswordHash = passwordHash,
