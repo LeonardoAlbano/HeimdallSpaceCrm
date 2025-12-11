@@ -8,6 +8,8 @@
 
     <ItemGroup>
       <ProjectReference Include="..\HeimdallSpaceCrm.Domain\HeimdallSpaceCrm.Domain.csproj" />
+      <ProjectReference Include="..\HeimdallSpaceCrm.Application\HeimdallSpaceCrm.Application.csproj" />
+      <ProjectReference Include="..\HeimdallSpaceCrm.Exception\HeimdallSpaceCrm.Exception.csproj" />
     </ItemGroup>
 
 </Project>
