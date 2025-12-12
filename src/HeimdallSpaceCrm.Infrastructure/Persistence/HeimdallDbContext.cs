@@ -6,6 +6,7 @@ namespace HeimdallSpaceCrm.Infrastructure.Persistence;
 public class HeimdallDbContext : DbContext
 {
     public HeimdallDbContext(DbContextOptions<HeimdallDbContext> options)
+        : base(options)
     {
     }
     

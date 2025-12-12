@@ -7,7 +7,6 @@ using HeimdallSpaceCrm.Exception;
 
 namespace HeimdallSpaceCrm.Application.UseCases.Auth.Register;
 
-
 public class RegisterUserUseCase : IRegisterUserUseCase
 {
     private readonly IUserRepository _userRepository;
@@ -20,29 +19,29 @@ public class RegisterUserUseCase : IRegisterUserUseCase
         IValidator<RegisterUserRequest> validator)
     {
         _userRepository = userRepository;
-        _passwordHasher = passwordHasher;   
+        _passwordHasher = passwordHasher;
         _validator = validator;
     }
 
-    public async Task<RegisterUserResponse> ExecuteAsync(RegisterUserRequest request, CancellationToken ct = default)
+    public async Task<RegisterUserResponse> ExecuteAsync(
+        RegisterUserRequest request,
+        CancellationToken ct = default)
     {
         var validation = await _validator.ValidateAsync(request, ct);
-        if(!validation.IsValid)
+        if (!validation.IsValid)
             throw new ValidationException(validation.Errors);
 
         var existing = await _userRepository.GetByEmailAsync(request.Email, ct);
-        if(existing is not null)
-            throw new EmailAlreadyExistsException(request.Password);
-        
+        if (existing is not null)
+            throw new EmailAlreadyExistsException(request.Email);
+
         var hash = _passwordHasher.Hash(request.Password);
-        
-        var user = User.Create(Guid.NewGuid(), request.Name, request.Email, hash);
 
+        var user = User.Create(request.Name, request.Email, hash);
 
-        
         await _userRepository.AddAsync(user, ct);
         await _userRepository.SaveChangesAsync(ct);
-        
+
         return new RegisterUserResponse(user.Id, user.Name, user.Email);
     }
 }

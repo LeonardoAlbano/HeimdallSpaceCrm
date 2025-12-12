@@ -10,7 +10,7 @@ public class User
     public string PasswordHash { get; private set; } = null!;
     public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;
 
-    public static User Create(Guid id, string name, string email, string passwordHash)
+    public static User Create( string name, string email, string passwordHash)
     {
         return new User
         {

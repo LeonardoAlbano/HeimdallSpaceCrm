@@ -1,6 +1,4 @@
 using FluentValidation;
-using HeimdallSpaceCrm.Application.Auth;
-using HeimdallSpaceCrm.Application.Auth.Register.Requests;
 using HeimdallSpaceCrm.Application.Security;
 using HeimdallSpaceCrm.Application.UseCases.Auth.Register;
 using HeimdallSpaceCrm.Communication.Auth.Register.Requests;
